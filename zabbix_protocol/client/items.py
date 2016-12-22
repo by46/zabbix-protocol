@@ -1,0 +1,6 @@
+AGENT_PING = 'agent.ping'
+AGENT_VERSION = 'agent.version'
+SYSTEM_UNAME = 'system.uname'
+VFS_FS_DISCOVERY = 'vfs.fs.discovery'
+NET_IF_DISCOVERY = 'net.if.discovery'
+SYSTEM_CPU_DISCOVERY = 'system.cpu.discovery'

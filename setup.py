@@ -2,10 +2,11 @@ from __future__ import print_function
 
 import io
 import os.path
-import re
 from distutils.text_file import TextFile
 
 from setuptools import find_packages, setup
+
+from zabbix_protocol import __version__
 
 home = os.path.abspath(os.path.dirname(__file__))
 missing = object()
@@ -32,16 +33,9 @@ def read_dependencies(requirements=missing):
         text.close()
 
 
-def read_version(version_file):
-    with open(version_file, 'rb') as fd:
-        result = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
-                           fd.read(), re.MULTILINE)
-        return result.group(1) if result else '0.0.1'
-
-
 setup(
     name='zabbix_protocol',
-    version=read_version('zabbix_protocol/__init__.py'),
+    version=__version__,
     license='The MIT License',
     description='demo',
     author='recipe',
